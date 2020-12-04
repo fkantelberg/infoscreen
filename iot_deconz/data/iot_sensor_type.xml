@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="iot_sensor_battery" model="iot.sensor.type">
+        <field name="name">battery</field>
+        <field name="factor">1</field>
+        <field name="unit">%</field>
+    </record>
+
+    <record id="iot_sensor_humidity" model="iot.sensor.type">
+        <field name="name">humidity</field>
+        <field name="factor" eval="0.01"/>
+        <field name="unit">%</field>
+    </record>
+
+    <record id="iot_sensor_pressure" model="iot.sensor.type">
+        <field name="name">pressure</field>
+        <field name="factor" eval="1.0"/>
+        <field name="unit">mbar</field>
+    </record>
+
+    <record id="iot_sensor_temperature" model="iot.sensor.type">
+        <field name="name">temperature</field>
+        <field name="factor" eval="0.01"/>
+        <field name="unit">°C</field>
+    </record>
+</odoo>

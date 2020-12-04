@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_iot_xkcd_tree" model="ir.ui.view">
+        <field name="model">iot.xkcd</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="number"/>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_iot_xkcd_form" model="ir.ui.view">
+        <field name="model">iot.xkcd</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="number"/>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="url"/>
+                    </group>
+
+                    <field name="img" widget="image"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_iot_xkcd" model="ir.actions.act_window">
+        <field name="name">xkcd</field>
+        <field name="res_model">iot.xkcd</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_iot_xkcd" groups="base.group_user" action="action_iot_xkcd" parent="iot.menu_iot" sequence="300"/>
+</odoo>

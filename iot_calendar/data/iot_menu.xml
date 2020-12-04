@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="iot_menu_calendar" model="iot.menu">
+        <field name="name">Calendar</field>
+        <field name="url">/iot/calendar</field>
+        <field name="icon_class">fa fa-calendar</field>
+        <field name="model" ref="iot_calendar.model_calendar_event"/>
+        <field name="counter_code"><![CDATA[
+now = datetime.now().isoformat(" ")
+result = model.search_count([
+    ("iot_event", "=", True),
+    ("start", "<=", now),
+    ("stop", ">=", now),
+])
+]]></field>
+    </record>
+</odoo>

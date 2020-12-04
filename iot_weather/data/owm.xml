@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record id="owm_api_token" model="ir.config_parameter">
+        <field name="key">owm.api.token</field>
+        <field name="value"></field>
+    </record>
+
+    <record id="owm_map_url" model="ir.config_parameter">
+        <field name="key">owm.map.url</field>
+        <field name="value">https://tile.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid={api_key}</field>
+    </record>
+
+    <record id="owm_osm_url" model="ir.config_parameter">
+        <field name="key">owm.osm.url</field>
+        <field name="value">https://tile.openstreetmap.org/{z}/{x}/{y}.png</field>
+    </record>
+
+    <record id="owm_unit" model="ir.config_parameter">
+        <field name="key">owm.unit</field>
+        <field name="value">metric</field>
+    </record>
+
+    <record id="owm_color_temp" model="ir.config_parameter">
+        <field name="key">owm.color.temp</field>
+        <field name="value">rgba(200, 0, 0, 1.0)</field>
+    </record>
+
+    <record id="owm_color_rain" model="ir.config_parameter">
+        <field name="key">owm.color.rain</field>
+        <field name="value">rgba(0, 127, 200, 1.0)</field>
+    </record>
+
+    <record id="owm_color_snow" model="ir.config_parameter">
+        <field name="key">owm.color.snow</field>
+        <field name="value">rgba(200, 200, 200, 1.0)</field>
+    </record>
+
+    <record id="owm_color_humidity" model="ir.config_parameter">
+        <field name="key">owm.color.humidity</field>
+        <field name="value">rgba(200, 0, 0, 1.0)</field>
+    </record>
+
+    <record id="owm_color_wind" model="ir.config_parameter">
+        <field name="key">owm.color.wind</field>
+        <field name="value">rgba(0, 200, 200, 1.0)</field>
+    </record>
+</odoo>

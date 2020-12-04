@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_iot_city,access_iot_city,model_iot_city,base.group_user,1,1,1,1
+access_iot_daily,access_iot_daily,model_iot_daily,base.group_user,1,1,1,1
+access_iot_hourly,access_iot_hourly,model_iot_hourly,base.group_user,1,1,1,1
+access_iot_condition,access_iot_condition,model_iot_condition,base.group_user,1,1,1,1

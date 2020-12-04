@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="assets" inherit_id="iot.assets">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/scss" href="/iot_xkcd/static/src/scss/assets.scss"/>
+        </xpath>
+    </template>
+
+    <template id="main_page">
+        <t t-call="iot.layout">
+            <t t-if="xkcd">
+                <t t-set="pagination" t-value="True"/>
+                <t t-set="upper" t-value="latest"/>
+                <t t-set="page" t-value="xkcd.number"/>
+                <t t-set="randomize" t-value="True"/>
+
+                <h2 t-esc="xkcd.name"/>
+                <img t-attf-src="{{ xkcd.url }}" class="xkcd-image"/>
+            </t>
+        </t>
+    </template>
+</odoo>

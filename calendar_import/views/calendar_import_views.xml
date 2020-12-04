@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_calendar_import_tree" model="ir.ui.view">
+        <field name="model">calendar.import</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="user_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_calendar_import_form" model="ir.ui.view">
+        <field name="model">calendar.import</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button type="object" name="sync" string="Synchronize"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="url"/>
+                        <field name="user_id"/>
+                    </group>
+
+                    <notebook>
+                        <page string="Mapping">
+                            <field name="mapping_ids" context="{'default_import_id': active_id}"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_calendar_import_mapping_tree" model="ir.ui.view">
+        <field name="model">calendar.import.mapping</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="import_id" invisible="1"/>
+                <field name="field_id"/>
+                <field name="mapping_type"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_calendar_import_mapping_form" model="ir.ui.view">
+        <field name="model">calendar.import.mapping</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="import_id" invisible="1"/>
+                        <field name="field_id"/>
+                        <field name="mapping_type"/>
+                        <field name="value" attrs="{'invisible': [('mapping_type', '!=', 'fixed')]}"/>
+                        <field name="field_name" attrs="{'invisible': [('mapping_type', '!=', 'field')]}"/>
+                        <field name="code" attrs="{'invisible': [('mapping_type', '!=', 'code')]}"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_calendar_import" model="ir.actions.act_window">
+        <field name="name">Calendar Import</field>
+        <field name="res_model">calendar.import</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="menu_calendar_import"
+        parent="calendar.menu_calendar_configuration"
+        action="action_calendar_import"/>
+</odoo>

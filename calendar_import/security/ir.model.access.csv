@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_calendar_import,access_calendar_import,model_calendar_import,base.group_user,1,1,1,1
+access_calendar_import_mapping,access_calendar_import_mapping,model_calendar_import_mapping,base.group_user,1,1,1,1

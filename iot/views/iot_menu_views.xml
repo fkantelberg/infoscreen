@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_iot_menu_tree" model="ir.ui.view">
+        <field name="model">iot.menu</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="enabled"/>
+                <field name="name"/>
+                <field name="url"/>
+                <field name="model"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_iot_menu_form" model="ir.ui.view">
+        <field name="model">iot.menu</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="enabled"/>
+                        <field name="url"/>
+                        <field name="icon_class"/>
+                        <field name="sequence"/>
+                        <field name="model"/>
+                        <field name="counter_code"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_iot_menu" model="ir.actions.act_window">
+        <field name="name">Menu</field>
+        <field name="res_model">iot.menu</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_iot_menu" name="Menu" groups="base.group_user" action="action_iot_menu" parent="iot.menu_iot" sequence="900"/>
+</odoo>

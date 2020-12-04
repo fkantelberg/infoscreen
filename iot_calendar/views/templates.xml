@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="assets" inherit_id="iot.assets">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" type="text/scss" href="/iot_calendar/static/src/scss/assets.scss"/>
+        </xpath>
+    </template>
+
+    <template id="calendar_page">
+        <t t-call="iot.layout">
+            <div class="calendar">
+                <t t-foreach="days" t-as="day">
+                    <t t-if="day == today" t-set="extra"> today</t>
+                    <t t-else="" t-set="extra"></t>
+
+                    <div t-attf-class="day{{ extra or '' }}">
+                        <div class="date" t-esc="day.strftime('%d %b').lstrip('0')"/>
+                        <div class="event" t-foreach="days[day]" t-as="event">
+                            <span t-attf-class="fa {{ event.iot_icon }}" t-if="event.iot_icon"/>
+                            <span class="name" t-field="event.name"/>
+                        </div>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>

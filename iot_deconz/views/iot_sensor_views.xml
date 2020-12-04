@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_iot_sensor_tree" model="ir.ui.view">
+        <field name="model">iot.sensor</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="display_name"/>
+                <field name="name"/>
+                <field name="color"/>
+                <field name="type_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_iot_sensor_form" model="ir.ui.view">
+        <field name="model">iot.sensor</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="display_name"/>
+                        <field name="name"/>
+                        <field name="color"/>
+                        <field name="type_ids" widget="many2many_tags"/>
+                    </group>
+
+                    <label for="data"/>
+                    <field name="data"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_iot_sensor_type_tree" model="ir.ui.view">
+        <field name="model">iot.sensor.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="factor"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_iot_sensor_type_form" model="ir.ui.view">
+        <field name="model">iot.sensor.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="factor"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_iot_sensor_data_tree" model="ir.ui.view">
+        <field name="model">iot.sensor.data</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="lastupdated"/>
+                <field name="field_ids" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_sensor_menu" model="ir.actions.act_window">
+        <field name="name">Sensors</field>
+        <field name="res_model">iot.sensor</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_sensor_type_menu" model="ir.actions.act_window">
+        <field name="name">Types</field>
+        <field name="res_model">iot.sensor.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_sensor_menu" name="Sensor" groups="base.group_user" parent="iot.menu_iot" sequence="150"/>
+
+    <menuitem id="menu_sensor" name="Sensors" groups="base.group_user" action="action_sensor_menu" parent="menu_sensor_menu" sequence="10"/>
+    <menuitem id="menu_sensor_type" name="Types" groups="base.group_user" action="action_sensor_type_menu" parent="menu_sensor_menu" sequence="20"/>
+</odoo>

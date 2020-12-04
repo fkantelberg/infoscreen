@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="assets" inherit_id="iot.assets">
+        <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/iot_weather/static/src/css/weathericons.css"/>
+
+            <link rel="stylesheet" type="text/scss" href="/iot_weather/static/src/scss/assets.scss"/>
+        </xpath>
+    </template>
+
+    <template id="map_assets">
+        <link rel="stylesheet" href="/iot_weather/static/lib/css/leaflet.css"/>
+
+        <script type="text/javascript" src="/iot_weather/static/lib/js/leaflet.min.js"></script>
+        <script type="text/javascript" src="/iot_weather/static/src/js/weather_map.js"></script>
+    </template>
+
+    <template id="forecast_assets">
+        <t t-call="iot.assets_chart"/>
+        <script type="text/javascript" src="/iot_weather/static/src/js/weather_forecast.js"></script>
+    </template>
+
+    <template id="forecast_day">
+        <t t-if="rec.beaufort_max >= 12">
+            <t t-set="wind_cls" t-value="wi-hurricane-warning"/>
+        </t>
+        <t t-elif="rec.beaufort_max >= 10">
+            <t t-set="wind_cls" t-value="wi-storm-warning"/>
+        </t>
+        <t t-elif="rec.beaufort_max >= 8">
+            <t t-set="wind_cls" t-value="wi-gale-warning"/>
+        </t>
+        <t t-elif="rec.beaufort_max >= 6">
+            <t t-set="wind_cls" t-value="wi-small-craft-advisory"/>
+        </t>
+
+        <span t-if="wind_cls" t-attf-class="alert wi {{ wind_cls }}"/>
+        <div class="date" t-esc="rec.date.strftime('%a')"/>
+        <div class="icon"><span t-attf-class="wi wi-{{ rec.condition_id.owm_id }}"/></div>
+        <div class="temperature">
+            <span class="max-temperature">
+                <span t-field="rec.temp_max"/><span class="wi wi-celsius"/>
+            </span>
+            <span class="min-temperature">
+                <span t-field="rec.temp_min"/><span class="wi wi-celsius"/>
+            </span>
+        </div>
+        <div class="additional">
+            <div class="humidity">
+                <span t-field="rec.humidity"/> <span class="wi wi-humidity"/>
+            </div>
+            <div class="qpf">
+                <span t-field="rec.qpf"/> mm
+            </div>
+            <div class="wind-speed">
+                <span t-attf-class="wi wi-wind-{{ rec.beaufort_max }}"/>
+                <span t-field="rec.wind_speed_max"/> m/s
+            </div>
+            <div>
+                <span t-esc="localize(rec.sunrise).strftime('%H:%M')"/> -
+                <span t-esc="localize(rec.sunset).strftime('%H:%M')"/>
+            </div>
+        </div>
+    </template>
+
+
+    <template id="map_page">
+        <t t-call="iot.layout">
+            <t t-set="assets">
+                <t t-call-assets="iot_weather.map_assets" t-js="false"/>
+                <t t-call-assets="iot_weather.map_assets" t-css="false" defer_load="True"/>
+            </t>
+
+            <div id="map"></div>
+        </t>
+    </template>
+
+    <template id="forecast_page">
+        <t t-call="iot.layout">
+            <t t-set="assets">
+                <t t-call-assets="iot_weather.forecast_assets" t-js="false"/>
+                <t t-call-assets="iot_weather.forecast_assets" t-css="false" defer_load="True"/>
+            </t>
+
+            <canvas id="forecast-1" class="forecast"/>
+            <canvas id="forecast-2" class="forecast"/>
+        </t>
+    </template>
+
+    <template id="forecast_days_page">
+        <t t-call="iot.layout">
+            <div class="weather">
+                <div class="today-wrap">
+                    <div class="today" t-call="iot_weather.forecast_day">
+                        <t t-set="rec" t-value="today"/>
+                    </div>
+                </div>
+
+                <div class="daily" t-foreach="dailies" t-as="daily">
+                    <t t-call="iot_weather.forecast_day">
+                        <t t-set="rec" t-value="daily"/>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

@@ -1,0 +1,22 @@
+.calendar {
+  display: grid;
+  grid: 30% 30% 30% / 13% 13% 13% 13% 13% 13% 13%;
+  grid-gap: 5% 1.5%;
+  height: 100%;
+  width: 100%;
+
+  .today {
+    border: 1px solid white;
+  }
+
+  .day {
+    .date {
+      font-weight: bold;
+    }
+
+    .event {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+}

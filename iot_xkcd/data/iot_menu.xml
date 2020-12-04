@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="iot_menu_xkcd" model="iot.menu">
+        <field name="name">xkcd</field>
+        <field name="url">/iot/xkcd</field>
+        <field name="icon_class">fa fa-times</field>
+    </record>
+</odoo>

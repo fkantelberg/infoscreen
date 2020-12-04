@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="assets_sensor">
+        <t t-call="iot.assets_chart"/>
+
+        <script type="text/javascript" src="/iot_deconz/static/src/js/sensor.js"></script>
+    </template>
+
+    <template id="sensor_page">
+        <t t-call="iot.layout">
+            <t t-set="assets">
+                <t t-call-assets="iot_deconz.assets_sensor" t-js="false"/>
+                <t t-call-assets="iot_deconz.assets_sensor" t-css="false" defer_load="True"/>
+            </t>
+
+            <canvas class="sensor" field="temperature"/>
+            <canvas class="sensor" field="humidity"/>
+        </t>
+    </template>
+</odoo>

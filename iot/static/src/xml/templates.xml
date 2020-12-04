@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+    <t t-name="Menu">
+        <span t-if="counter" class="counter">
+            <t t-if="counter > 9">!</t>
+            <t t-else="" t-esc="counter"/>
+        </span>
+    </t>
+</templates>

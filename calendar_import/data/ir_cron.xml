@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo noupdate="1">
+    <record id="cron_calendar_import" model="ir.cron">
+        <field name="name">Calendar Import</field>
+        <field name="model_id" ref="model_calendar_import"/>
+        <field name="state">code</field>
+        <field name="code">model.sync()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">hours</field>
+        <field name="numbercall">-1</field>
+        <field name="active" eval="False"/>
+    </record>
+</odoo>

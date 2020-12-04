@@ -1,0 +1,71 @@
+#map {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.weather {
+  display: grid;
+  grid: 50% 50% / 25% 25% 25% 25%;
+  height: 100%;
+
+  .additional {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .daily .date, .today .date {
+    font-size: 20px;
+    font-weight: bold;
+    left: 0.5rem;
+    position: absolute;
+    top: 0.5rem;
+  }
+
+  .alert {
+    font-size: 20px;
+    position: absolute;
+    left: 0.5rem;
+    top: 3rem;
+  }
+
+  .today-wrap {
+    grid-column: 1 / span 4;
+    margin: auto 0;
+
+    .today {
+      align-items: center;
+      display: grid;
+      grid: 100% / auto auto auto;
+      justify-content: space-around;
+      position: relative;
+
+      .min-temperature {
+        font-size: 32px;
+      }
+
+      .max-temperature, .icon {
+        font-size: 72px;
+      }
+    }
+  }
+
+  .daily {
+    display: grid;
+    grid: auto auto auto / auto;
+    position: relative;
+    text-align: center;
+
+    .max-temperature, .icon {
+      font-size: 32px;
+    }
+
+    .min-temperature {
+      font-size: 20px;
+    }
+
+    .sun {
+      display: none;
+    }
+  }
+}

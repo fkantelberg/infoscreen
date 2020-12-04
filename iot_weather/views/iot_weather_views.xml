@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_iot_city_tree" model="ir.ui.view">
+        <field name="model">iot.city</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="enabled"/>
+                <field name="name"/>
+                <field name="country"/>
+                <field name="lat"/>
+                <field name="lon"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_iot_city_form" model="ir.ui.view">
+        <field name="model">iot.city</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button type="object" name="action_enable" string="Enable"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="enabled"/>
+                        <field name="country"/>
+                        <field name="lat"/>
+                        <field name="lon"/>
+                        <field name="owm_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_iot_condition_tree" model="ir.ui.view">
+        <field name="model">iot.condition</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="owm_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_iot_condition_form" model="ir.ui.view">
+        <field name="model">iot.condition</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="description"/>
+                        <field name="owm_id"/>
+                        <field name="icon"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_iot_daily_tree" model="ir.ui.view">
+        <field name="model">iot.daily</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="city_id"/>
+                <field name="date"/>
+                <field name="temp"/>
+                <field name="humidity"/>
+                <field name="pressure"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_iot_daily_form" model="ir.ui.view">
+        <field name="model">iot.daily</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="city_id"/>
+                        <field name="date"/>
+                        <field name="temp"/>
+                        <field name="temp_min"/>
+                        <field name="temp_max"/>
+                        <field name="humidity"/>
+                        <field name="humidity_max"/>
+                        <field name="humidity_min"/>
+                        <field name="pressure"/>
+                        <field name="pressure_max"/>
+                        <field name="pressure_min"/>
+                        <field name="cloudiness"/>
+                        <field name="cloudiness_max"/>
+                        <field name="cloudiness_min"/>
+                        <field name="rain"/>
+                        <field name="snow"/>
+                        <field name="wind_speed"/>
+                        <field name="wind_speed_max"/>
+                        <field name="wind_speed_min"/>
+                        <field name="condition_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_iot_hourly_tree" model="ir.ui.view">
+        <field name="model">iot.hourly</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="city_id"/>
+                <field name="time"/>
+                <field name="temp"/>
+                <field name="humidity"/>
+                <field name="pressure"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_iot_hourly_form" model="ir.ui.view">
+        <field name="model">iot.hourly</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="city_id"/>
+                        <field name="time"/>
+                        <field name="temp"/>
+                        <field name="temp_min"/>
+                        <field name="temp_max"/>
+                        <field name="humidity"/>
+                        <field name="pressure"/>
+                        <field name="pressure_sea"/>
+                        <field name="cloudiness"/>
+                        <field name="rain"/>
+                        <field name="snow"/>
+                        <field name="wind_speed"/>
+                        <field name="wind_dir"/>
+                        <field name="condition_ids" widget="many2many_tags"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_weather_city_menu" model="ir.actions.act_window">
+        <field name="name">City</field>
+        <field name="res_model">iot.city</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_weather_condition_menu" model="ir.actions.act_window">
+        <field name="name">Condition</field>
+        <field name="res_model">iot.condition</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_weather_daily_menu" model="ir.actions.act_window">
+        <field name="name">Daily</field>
+        <field name="res_model">iot.daily</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_weather_hourly_menu" model="ir.actions.act_window">
+        <field name="name">Hourly</field>
+        <field name="res_model">iot.hourly</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_weather" name="Weather" groups="base.group_user" parent="iot.menu_iot" sequence="200"/>
+    <menuitem id="menu_weather_city" groups="base.group_user" action="action_weather_city_menu" parent="iot_weather.menu_weather" sequence="1"/>
+    <menuitem id="menu_weather_condition" groups="base.group_user" action="action_weather_condition_menu" parent="iot_weather.menu_weather" sequence="2"/>
+    <menuitem id="menu_weather_daily" groups="base.group_user" action="action_weather_daily_menu" parent="iot_weather.menu_weather" sequence="3"/>
+    <menuitem id="menu_weather_hourly" groups="base.group_user" action="action_weather_hourly_menu" parent="iot_weather.menu_weather" sequence="4"/>
+</odoo>

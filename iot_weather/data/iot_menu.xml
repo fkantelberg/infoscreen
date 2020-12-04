@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="iot_menu_dailies" model="iot.menu">
+        <field name="name">Dailies</field>
+        <field name="url">/iot/daily</field>
+        <field name="icon_class">fa fa-sun-o</field>
+    </record>
+
+    <record id="iot_menu_forecast" model="iot.menu">
+        <field name="name">Forecast</field>
+        <field name="url">/iot/forecast</field>
+        <field name="icon_class">fa fa-line-chart</field>
+    </record>
+
+    <record id="iot_menu_map" model="iot.menu">
+        <field name="name">Map</field>
+        <field name="url">/iot/map</field>
+        <field name="icon_class">fa fa-map</field>
+    </record>
+
+    <record id="iot_menu_map_clouds" model="iot.menu">
+        <field name="name">Map - Clouds</field>
+        <field name="url">/iot/map?mode=clouds</field>
+        <field name="icon_class">wi wi-clouds</field>
+        <field name="parent_id" ref="iot_menu_map"/>
+    </record>
+
+    <record id="iot_menu_map_precipitation" model="iot.menu">
+        <field name="name">Map - Precipitation</field>
+        <field name="url">/iot/map?mode=temp</field>
+        <field name="icon_class">wi wi-qpf</field>
+        <field name="parent_id" ref="iot_menu_map"/>
+    </record>
+
+    <record id="iot_menu_map_pressure" model="iot.menu">
+        <field name="name">Map - Pressure</field>
+        <field name="url">/iot/map?mode=pressure</field>
+        <field name="icon_class">wi wi-pressure</field>
+        <field name="parent_id" ref="iot_menu_map"/>
+    </record>
+
+    <record id="iot_menu_map_temp" model="iot.menu">
+        <field name="name">Map - Temperature</field>
+        <field name="url">/iot/map?mode=temp</field>
+        <field name="icon_class">wi wi-temperature</field>
+        <field name="parent_id" ref="iot_menu_map"/>
+    </record>
+
+    <record id="iot_menu_map_wind" model="iot.menu">
+        <field name="name">Map - Wind</field>
+        <field name="url">/iot/map?mode=wind</field>
+        <field name="icon_class">wi wi-wind</field>
+        <field name="parent_id" ref="iot_menu_map"/>
+    </record>
+</odoo>

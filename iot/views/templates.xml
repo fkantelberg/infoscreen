@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="assets">
+        <link rel="stylesheet" href="/web/static/lib/bootstrap/css/bootstrap.css"/>
+        <link rel="stylesheet" href="/web/static/lib/fontawesome/css/font-awesome.css"/>
+        <link rel="stylesheet" type="text/less" href="/web/static/src/scss/fontawesome_overridden.scss"/>
+
+        <link rel="stylesheet" type="text/scss" href="/iot/static/src/scss/variables.scss"/>
+        <link rel="stylesheet" type="text/scss" href="/iot/static/src/scss/assets.scss"/>
+
+        <script type="text/javascript" src="/web/static/lib/underscore/underscore.js"></script>
+        <script type="text/javascript" src="/web/static/lib/underscore.string/lib/underscore.string.js"></script>
+        <script type="text/javascript" src="/web/static/lib/moment/moment.js"></script>
+
+        <script type="text/javascript" src="/web/static/lib/jquery/jquery.js"></script>
+        <script type="text/javascript" src="/web/static/lib/jquery.ui/jquery-ui.js"></script>
+        <script type="text/javascript" src="/web/static/lib/jquery/jquery.browser.js"></script>
+        <script type="text/javascript" src="/web/static/lib/jquery.blockUI/jquery.blockUI.js"></script>
+        <script type="text/javascript" src="/web/static/lib/jquery.hotkeys/jquery.hotkeys.js"></script>
+        <script type="text/javascript" src="/web/static/lib/jquery.placeholder/jquery.placeholder.js"></script>
+        <script type="text/javascript" src="/web/static/lib/jquery.form/jquery.form.js"></script>
+        <script type="text/javascript" src="/web/static/lib/jquery.ba-bbq/jquery.ba-bbq.js"></script>
+        <script type="text/javascript" src="/web/static/lib/jquery.mjs.nestedSortable/jquery.mjs.nestedSortable.js"></script>
+
+        <t t-call="web.assets_common_minimal_js"/>
+
+        <script type="text/javascript" src="/web/static/lib/popper/popper.js"></script>
+
+        <script type="text/javascript" src="/web/static/lib/bootstrap/js/index.js"></script>
+        <script type="text/javascript" src="/web/static/lib/bootstrap/js/util.js"></script>
+        <script type="text/javascript" src="/web/static/lib/bootstrap/js/alert.js"></script>
+        <script type="text/javascript" src="/web/static/lib/bootstrap/js/button.js"></script>
+        <script type="text/javascript" src="/web/static/lib/bootstrap/js/carousel.js"></script>
+        <script type="text/javascript" src="/web/static/lib/bootstrap/js/collapse.js"></script>
+        <script type="text/javascript" src="/web/static/lib/bootstrap/js/dropdown.js"></script>
+        <script type="text/javascript" src="/web/static/lib/bootstrap/js/modal.js"></script>
+        <script type="text/javascript" src="/web/static/lib/bootstrap/js/tooltip.js"></script>
+        <script type="text/javascript" src="/web/static/lib/bootstrap/js/popover.js"></script>
+        <script type="text/javascript" src="/web/static/lib/bootstrap/js/scrollspy.js"></script>
+        <script type="text/javascript" src="/web/static/lib/bootstrap/js/tab.js"></script>
+        <script type="text/javascript" src="/web/static/lib/bootstrap/js/toast.js"></script>
+
+        <script type="text/javascript" src="/web/static/lib/tempusdominus/tempusdominus.js"/>
+        <script type="text/javascript" src="/web/static/lib/select2/select2.js"></script>
+        <script type="text/javascript" src="/web/static/lib/clipboard/clipboard.js"></script>
+        <script type="text/javascript" src="/web/static/lib/jSignature/jSignatureCustom.js"></script>
+
+        <script type="text/javascript" src="/web/static/lib/qweb/qweb2.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/libs/autocomplete.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/libs/bootstrap.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/libs/jquery.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/libs/download.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/libs/content-disposition.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/libs/underscore.js"></script>
+
+        <script type="text/javascript" src="/web/static/src/js/core/abstract_service.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/abstract_storage_service.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/ajax.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/bus.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/class.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/collections.js"/>
+        <script type="text/javascript" src="/web/static/src/js/core/concurrency.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/dialog.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/dom.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/local_storage.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/mixins.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/qweb.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/ram_storage.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/registry.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/rpc.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/service_mixins.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/session.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/session_storage.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/time.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/translation.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/utils.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/core/widget.js"></script>
+
+        <script type="text/javascript" src="/web/static/src/js/services/config.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/services/core.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/services/local_storage_service.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/services/crash_manager.js"></script>
+        <script type="text/javascript" src="/web/static/src/js/services/session_storage_service.js"></script>
+
+        <script type="text/javascript" src="/iot/static/src/js/menu.js"></script>
+    </template>
+
+    <template id="assets_chart">
+        <link rel="stylesheet" type="text/scss" href="/iot/static/lib/css/chart.min.css"/>
+        <script type="text/javascript" src="/iot/static/lib/js/chart.min.js"></script>
+    </template>
+
+    <template id="menu">
+        <t t-foreach="menu" t-as="item" class="item">
+            <a t-attf-href="{{ item.url }}" t-attf-class="{{ item.icon_class or '' }}">
+                <t t-esc="item.name" t-if="not item.icon_class"/>
+
+                <span class="subicon" t-attf-name="{{ item.url }}"/>
+            </a>
+        </t>
+    </template>
+
+    <template id="submenu">
+        <t t-call="iot.menu" t-if="submenu">
+            <t t-set="menu" t-value="submenu"/>
+        </t>
+
+        <t t-if="pagination">
+            <t t-if="lower is None">
+                <t t-set="lower" t-value="1"/>
+            </t>
+
+            <a t-attf-href="{{ url }}?page={{ lower }}" t-if="page &gt; lower + 1">
+                <span class="fa fa-angle-double-left"/>
+            </a>
+
+            <a t-attf-href="{{ url }}?page={{ page - 1 }}" t-if="page &gt; lower">
+                <span class="fa fa-angle-left"/>
+            </a>
+
+            <a t-attf-href="{{ url }}?page={{ random.randint(lower, upper) }}" t-if="randomize">
+                <span class="fa fa-random"/>
+            </a>
+
+            <a t-attf-href="{{ url }}?page={{ page + 1 }}" t-if="page &lt; upper">
+                <span class="fa fa-angle-right"/>
+            </a>
+
+            <a t-attf-href="{{ url }}?page={{ upper }}" t-if="page &lt; upper - 1">
+                <span class="fa fa-angle-double-right"/>
+            </a>
+        </t>
+    </template>
+
+    <template id="layout">&lt;!DOCTYPE html&gt;
+        <html>
+            <head>
+                <meta charset="utf-8"/>
+                <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+
+                <title t-esc="title or 'IoT'"/>
+
+                <t t-call-assets="iot.assets" t-js="false"/>
+                <t t-call-assets="iot.assets" t-css="false" defer_load="True"/>
+
+                <t t-if="assets" t-raw="assets"/>
+            </head>
+            <body>
+                <div id="menu" t-call="iot.menu"/>
+                <div id="submenu" t-call="iot.submenu"/>
+
+                <div id="wrapper" t-raw="0"/>
+            </body>
+        </html>
+    </template>
+
+    <template id="main_page">
+        <t t-call="iot.layout"/>
+    </template>
+</odoo>

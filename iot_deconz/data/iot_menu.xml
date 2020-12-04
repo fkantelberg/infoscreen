@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="iot_menu_sensor" model="iot.menu">
+        <field name="name">Sensors</field>
+        <field name="url">/iot/sensor</field>
+        <field name="icon_class">fa fa-home</field>
+    </record>
+</odoo>

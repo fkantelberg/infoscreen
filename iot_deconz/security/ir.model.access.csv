@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_iot_sensor,access_iot_sensor,model_iot_sensor,base.group_user,1,1,1,1
+access_iot_sensor_data,access_iot_sensor_data,model_iot_sensor_data,base.group_user,1,1,1,1
+access_iot_sensor_type,access_iot_sensor_type,model_iot_sensor_type,base.group_user,1,0,0,0
+access_iot_sensor_field,access_iot_sensor_field,model_iot_sensor_field,base.group_user,1,0,0,0
