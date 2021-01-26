@@ -22,16 +22,16 @@
 
     <template id="forecast_day">
         <t t-if="rec.beaufort_max >= 12">
-            <t t-set="wind_cls" t-value="wi-hurricane-warning"/>
+            <t t-set="wind_cls">wi-hurricane-warning</t>
         </t>
         <t t-elif="rec.beaufort_max >= 10">
-            <t t-set="wind_cls" t-value="wi-storm-warning"/>
+            <t t-set="wind_cls">wi-storm-warning</t>
         </t>
         <t t-elif="rec.beaufort_max >= 8">
-            <t t-set="wind_cls" t-value="wi-gale-warning"/>
+            <t t-set="wind_cls">wi-gale-warning</t>
         </t>
         <t t-elif="rec.beaufort_max >= 6">
-            <t t-set="wind_cls" t-value="wi-small-craft-advisory"/>
+            <t t-set="wind_cls">wi-small-craft-advisory</t>
         </t>
 
         <span t-if="wind_cls" t-attf-class="alert wi {{ wind_cls }}"/>
