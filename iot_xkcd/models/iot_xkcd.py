@@ -3,7 +3,6 @@ from base64 import b64encode
 
 import requests
 from odoo import api, fields, models
-from odoo.addons.queue_job.job import job
 
 XKCD_SERVER = "https://xkcd.com"
 
@@ -47,7 +46,6 @@ class XKCD(models.Model):
         except Exception:
             return None
 
-    @job
     def download(self, nums):
         if isinstance(nums, int):
             nums = [nums]
