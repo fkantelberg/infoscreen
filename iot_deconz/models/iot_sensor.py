@@ -84,7 +84,7 @@ class Sensor(models.Model):
     _order = "name"
 
     def _get_default_type(self):
-        return [(6, 0, self.env.ref("iot_deconz.iot_sensor_battry").ids)]
+        return [(6, 0, self.env.ref("iot_deconz.iot_sensor_battery").ids)]
 
     display_name = fields.Char()
     name = fields.Char(readonly=True)
